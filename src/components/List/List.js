@@ -2,14 +2,9 @@ import ListItem from "../ListItem/ListItem";
 
 import "../List/List.css";
 
-const EmployeesList = ({
-  data,
-  deleteItem,
-  onToggleRise,
-  onToggleIncrease,
-}) => {
+const List = ({ data, onToggleIncrease, onToggleRise, deleteItem }) => {
   return (
-    <ul className="app-list list-group">
+    <ul className="list list-group">
       {data.map((item) => (
         <ListItem
           key={item.id}
@@ -23,4 +18,4 @@ const EmployeesList = ({
   );
 };
 
-export default EmployeesList;
+export default List;

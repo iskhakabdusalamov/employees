@@ -1,8 +1,8 @@
-import "../Info/Info.css";
+import "./Header.css";
 
-const Info = ({ data }) => {
+const Header = ({ data }) => {
   return (
-    <div className="Info">
+    <div className="header">
       <h1>Учет сотрудников в компании N</h1>
       <h2>Общее число сотрудников: {data.length}</h2>
       <h2>Премию получат: {data.filter((item) => item.increase).length}</h2>
@@ -10,4 +10,4 @@ const Info = ({ data }) => {
   );
 };
 
-export default Info;
+export default Header;

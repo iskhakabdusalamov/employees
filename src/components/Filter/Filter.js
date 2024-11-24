@@ -1,6 +1,6 @@
 import "../Filter/Filter.css";
 
-const Filter = (props) => {
+const Filter = ({ filter, setFilter }) => {
   const buttonsData = [
     {
       name: "all",
@@ -20,9 +20,9 @@ const Filter = (props) => {
       {buttonsData.map(({ name, label }) => (
         <button
           key={name}
-          onClick={() => props.onFilterSelect(name)}
+          onClick={() => setFilter(name)}
           className={`btn ${
-            props.filter === name ? "btn-light" : "btn-outline-light"
+            filter === name ? "btn-light" : "btn-outline-light"
           }`}
           type="button"
         >

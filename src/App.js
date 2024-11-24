@@ -81,7 +81,7 @@ const App = () => {
   return (
     <div className="App">
       <Header data={data} />
-      <div className="SearchAndFiltering">
+      <div className="searchAndFiltering">
         <Search searchvalue={searchValue} setSearchValue={setSearchValue} />
         <Filter filter={filter} setFilter={setFilter} />
       </div>
