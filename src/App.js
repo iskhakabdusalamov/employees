@@ -4,7 +4,6 @@ import Search from "./components/Search/Search";
 import Filter from "./components/Filter/Filter";
 import List from "./components/List/List";
 import Add from "./components/Add/Add";
-import "./App.css";
 
 const App = () => {
   const [searchValue, setSearchValue] = React.useState("");
@@ -79,7 +78,7 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div style={{ maxWidth: "1000px", margin: "50px auto" }}>
       <Header data={data} />
       <div className="searchAndFiltering">
         <Search searchvalue={searchValue} setSearchValue={setSearchValue} />
