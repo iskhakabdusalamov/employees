@@ -1,6 +1,11 @@
-import "../Filter/Filter.css";
+import "./empFilter.css";
 
-const Filter = ({ filter, setFilter }) => {
+interface FilterProps {
+  filter: string;
+  setFilter: (value: string) => void;
+}
+
+const EmpFilter: React.FC<FilterProps> = ({ filter, setFilter }) => {
   const buttonsData = [
     {
       name: "all",
@@ -15,6 +20,7 @@ const Filter = ({ filter, setFilter }) => {
       label: "З/П больше 1000$",
     },
   ];
+
   return (
     <div className="btn-group">
       {buttonsData.map(({ name, label }) => (
@@ -33,4 +39,4 @@ const Filter = ({ filter, setFilter }) => {
   );
 };
 
-export default Filter;
+export default EmpFilter;

@@ -1,11 +1,11 @@
 import "./header.css";
 
-interface HeaderProps {
-  data: Employee[];
-}
-
 interface Employee {
   increase: boolean;
+}
+
+interface HeaderProps {
+  data: Employee[];
 }
 
 const Header: React.FC<HeaderProps> = ({ data }) => {

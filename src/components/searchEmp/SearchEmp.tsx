@@ -1,6 +1,14 @@
-import "../Search/SearchAndFiltering.css";
+import "./searchEmp.css";
 
-const SearchPanel = ({ searchValue, setSearchValue }) => {
+interface SearchProps {
+  searchValue: string;
+  setSearchValue: (value: string) => void;
+}
+
+const SearchEmp: React.FC<SearchProps> = ({
+  searchValue,
+  setSearchValue,
+}) => {
   return (
     <input
       className="form-control search-input"
@@ -12,4 +20,4 @@ const SearchPanel = ({ searchValue, setSearchValue }) => {
   );
 };
 
-export default SearchPanel;
+export default SearchEmp;

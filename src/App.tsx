@@ -1,21 +1,29 @@
 import React from "react";
-import Header from "./components/Header/Header";
-import Search from "./components/Search/Search";
-import Filter from "./components/Filter/Filter";
-import List from "./components/List/List";
-import Add from "./components/Add/Add";
+import Header from "./components/header/Header";
+import SearchEmp from "./components/searchEmp/SearchEmp";
+import EmpFilter from "./components/empFilter/EmpFilter";
+import ListEmp from "./components/listEmp/ListEmp";
+import AddEmp from "./components/addEmp/AddEmp";
 
-const App = () => {
-  const [searchValue, setSearchValue] = React.useState("");
-  const [filter, setFilter] = React.useState("all");
-  const [data, setData] = React.useState([
+interface Employee {
+  name: string;
+  salary: number;
+  increase: boolean;
+  rise: boolean;
+  id: number;
+}
+
+const App: React.FC = () => {
+  const [searchValue, setSearchValue] = React.useState<string>("");
+  const [filter, setFilter] = React.useState<string>("all");
+  const [data, setData] = React.useState<Employee[]>([
     { name: "John C.", salary: 800, increase: false, rise: true, id: 0 },
     { name: "Alex M.", salary: 3000, increase: true, rise: false, id: 1 },
     { name: "Carl W.", salary: 5000, increase: false, rise: false, id: 2 },
   ]);
-  const [maxId, setMaxId] = React.useState(3);
+  const [maxId, setMaxId] = React.useState<number>(3);
 
-  const searchEmp = (data, searchValue) => {
+  const searchEmp = (data: Employee[], searchValue: string): Employee[] => {
     if (!searchValue) {
       return data;
     }
@@ -24,7 +32,7 @@ const App = () => {
     );
   };
 
-  const filterPost = (data, filter) => {
+  const filterPost = (data: Employee[], filter: string): Employee[] => {
     switch (filter) {
       case "rise":
         return data.filter((item) => item.rise);
@@ -37,7 +45,7 @@ const App = () => {
 
   const filteredData = filterPost(searchEmp(data, searchValue), filter);
 
-  const onToggleIncrease = (id) => {
+  const onToggleIncrease = (id: number): void => {
     setData((prev) =>
       prev.map((item) => {
         if (item.id === id) {
@@ -49,7 +57,7 @@ const App = () => {
     );
   };
 
-  const onToggleRise = (id) => {
+  const onToggleRise = (id: number): void => {
     setData((prev) =>
       prev.map((item) => {
         if (item.id === id) {
@@ -61,12 +69,12 @@ const App = () => {
     );
   };
 
-  const deleteItem = (id) => {
+  const deleteItem = (id: number): void => {
     setData(data.filter((item) => item.id !== id));
   };
 
-  const addItem = (name, salary) => {
-    const newItem = {
+  const addItem = (name: string, salary: number): void => {
+    const newItem: Employee = {
       name,
       salary,
       increase: false,
@@ -80,17 +88,17 @@ const App = () => {
   return (
     <div style={{ maxWidth: "1000px", margin: "50px auto" }}>
       <Header data={data} />
-      <div className="searchAndFiltering">
-        <Search searchvalue={searchValue} setSearchValue={setSearchValue} />
-        <Filter filter={filter} setFilter={setFilter} />
+      <div className="searchEmp">
+        <SearchEmp searchValue={searchValue} setSearchValue={setSearchValue} />
+        <EmpFilter filter={filter} setFilter={setFilter} />
       </div>
-      <List
+      <ListEmp
         data={filteredData}
         onToggleIncrease={onToggleIncrease}
         onToggleRise={onToggleRise}
         deleteItem={deleteItem}
       />
-      <Add addItem={addItem} />
+      <AddEmp addItem={addItem} />
     </div>
   );
 };

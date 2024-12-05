@@ -1,14 +1,22 @@
 import React from "react";
-import "../Add/Add.css";
+import "./addEmp.css";
 
-const Add = ({ addItem }) => {
-  const [name, setName] = React.useState("");
-  const [salary, setSalary] = React.useState("");
+interface AddProps {
+  addItem: (name: string, salary: number) => void;
+}
 
-  const onSubmit = (e) => {
+const Add: React.FC<AddProps> = ({ addItem }) => {
+  const [name, setName] = React.useState<string>("");
+  const [salary, setSalary] = React.useState<string>("");
+
+  const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (name.trim().length < 1 || !salary) return;
-    addItem(name, salary);
+    const salaryNumber = Number(salary);
+
+    if (name.trim().length < 1 || isNaN(salaryNumber) || salaryNumber <= 0)
+      return;
+
+    addItem(name, salaryNumber);
     setName("");
     setSalary("");
   };
@@ -16,7 +24,7 @@ const Add = ({ addItem }) => {
   return (
     <div className="add">
       <h3>Добавьте нового сотрудника</h3>
-      <form className="addForm d-flex" onSubmit={onSubmit}>
+      <form className="addForm" onSubmit={onSubmit}>
         <input
           className="form-control new-post-label"
           onChange={(e) => setName(e.target.value)}
