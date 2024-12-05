@@ -70,6 +70,12 @@
   .salary {
     margin-right: 50px;
   }
+
+  .button {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 475px) {
@@ -80,5 +86,15 @@
   .name {
     margin-bottom: 10px;
     flex: 0 0 100%;
+  }
+
+  .salary {
+    margin-right: 20px;
+    flex: 0 0 auto;
+  }
+
+  .buttons {
+    justify-content: flex-end;
+    flex: 1;
   }
 }
