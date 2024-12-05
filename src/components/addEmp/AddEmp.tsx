@@ -1,11 +1,11 @@
-import React from "react";
 import "./addEmp.css";
+import React from "react";
 
 interface AddProps {
   addItem: (name: string, salary: number) => void;
 }
 
-const Add: React.FC<AddProps> = ({ addItem }) => {
+const AddEmp: React.FC<AddProps> = ({ addItem }) => {
   const [name, setName] = React.useState<string>("");
   const [salary, setSalary] = React.useState<string>("");
 
@@ -47,4 +47,4 @@ const Add: React.FC<AddProps> = ({ addItem }) => {
   );
 };
 
-export default Add;
+export default AddEmp;

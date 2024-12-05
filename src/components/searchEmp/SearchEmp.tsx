@@ -5,10 +5,7 @@ interface SearchProps {
   setSearchValue: (value: string) => void;
 }
 
-const SearchEmp: React.FC<SearchProps> = ({
-  searchValue,
-  setSearchValue,
-}) => {
+const SearchEmp: React.FC<SearchProps> = ({ searchValue, setSearchValue }) => {
   return (
     <input
       className="form-control search-input"

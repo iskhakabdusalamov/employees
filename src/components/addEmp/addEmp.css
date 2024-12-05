@@ -20,16 +20,10 @@
 @media (max-width: 600px) {
   .addForm {
     flex-direction: column;
-    align-items: stretch;
   }
 
   .addForm input {
     width: 100%;
-    margin-right: 0;
     margin-bottom: 10px;
-  }
-
-  .addForm button {
-    width: 100%;
   }
 }

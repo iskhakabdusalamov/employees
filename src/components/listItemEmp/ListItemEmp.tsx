@@ -35,12 +35,12 @@ const ListItemEmp: React.FC<ListItemProps> = ({
       <span className="salary">{salary + "$"}</span>
       <div className="buttons">
         <button onClick={onToggleIncrease} className="button сookieColor">
-          <span className="fas fa-cookie"></span>
+          <i className="fas fa-cookie"></i>
         </button>
         <button onClick={deleteItem} className="button trashColor">
-          <span className="fas fa-trash"></span>
+          <i className="fas fa-trash"></i>
         </button>
-        <span className="fas fa-star"></span>
+        <i className="fas fa-star"></i>
       </div>
     </li>
   );

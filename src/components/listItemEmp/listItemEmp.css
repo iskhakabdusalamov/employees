@@ -1,29 +1,27 @@
-/* Не трогать */
 .list-group-item {
   padding: 15px 20px;
   border-bottom: 1px solid #3d5a80;
-  align-items: center;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .list-group-item:last-child {
   border-bottom: none;
 }
 
 .name {
+  flex: 1;
   line-height: 35px;
   font-size: 20px;
   cursor: pointer;
 }
 
 .salary {
+  margin-right: 125px;
   line-height: 35px;
   font-size: 20px;
-  text-align: center;
-  border: 0;
 }
 
-/* Не трогать */
 .list-group-item.increase .name,
 .list-group-item.increase .salary {
   color: #e09f3e;
@@ -52,7 +50,6 @@
   color: #e5383b;
 }
 
-/* Не трогать */
 .fa-star {
   width: 35px;
   height: 35px;
@@ -67,4 +64,21 @@
 .like .fa-star {
   opacity: 1;
   transform: translateX(0px);
+}
+
+@media (max-width: 750px) {
+  .salary {
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 475px) {
+  .list-group-item {
+    flex-wrap: wrap;
+  }
+
+  .name {
+    margin-bottom: 10px;
+    flex: 0 0 100%;
+  }
 }
