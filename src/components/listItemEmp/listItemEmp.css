@@ -31,7 +31,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
 }
 
 .button {
@@ -41,7 +40,6 @@
   font-size: 17px;
   border: none;
   cursor: pointer;
-  text-align: center;
 }
 
 .сookieColor {
@@ -85,6 +83,7 @@
   }
 
   .salary {
+    margin-right: 20px;
     flex: 0 0 auto;
   }
 
