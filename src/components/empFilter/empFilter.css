@@ -5,6 +5,10 @@
   flex-wrap: wrap;
 }
 
+.btn {
+  max-width: 200px;
+}
+
 @media (max-width: 600px) {
   .btn {
     max-width: 100%;
