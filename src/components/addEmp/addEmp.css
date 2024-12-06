@@ -12,7 +12,7 @@
   display: flex;
 }
 
-.addForm input {
+.addInput {
   width: 350px;
   margin-right: 20px;
 }
@@ -22,7 +22,7 @@
     flex-direction: column;
   }
 
-  .addForm input {
+  .addInput {
     width: 100%;
     margin-bottom: 10px;
   }

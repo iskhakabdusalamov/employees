@@ -26,14 +26,14 @@ const AddEmp: React.FC<AddProps> = ({ addItem }) => {
       <h3>Добавьте нового сотрудника</h3>
       <form className="addForm" onSubmit={onSubmit}>
         <input
-          className="form-control new-post-label"
+          className="form-control new-post-label addInput"
           onChange={(e) => setName(e.target.value)}
           value={name}
           placeholder="Как его зовут?"
           type="text"
         />
         <input
-          className="form-control new-post-label"
+          className="form-control new-post-label addInput"
           onChange={(e) => setSalary(e.target.value)}
           value={salary}
           placeholder="З/П в $?"
