@@ -7,22 +7,22 @@
   color: #fff;
 }
 
-.addForm {
+.form {
   margin-top: 20px;
   display: flex;
 }
 
-.addInput {
+.input {
   width: 350px;
   margin-right: 20px;
 }
 
 @media (max-width: 600px) {
-  .addForm {
+  .form {
     flex-direction: column;
   }
 
-  .addInput {
+  .input {
     width: 100%;
     margin-bottom: 10px;
   }

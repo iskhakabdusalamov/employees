@@ -81,14 +81,4 @@
     margin-bottom: 10px;
     flex: 0 0 100%;
   }
-
-  .salary {
-    margin-right: 20px;
-    flex: 0 0 auto;
-  }
-
-  .buttons {
-    justify-content: flex-end;
-    flex: 1;
-  }
 }
