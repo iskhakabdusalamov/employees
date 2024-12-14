@@ -7,11 +7,28 @@
   color: #fff;
 }
 
-.addForm {
+.form {
   margin-top: 20px;
+  display: flex;
 }
 
-.addForm input {
+.input {
   width: 350px;
   margin-right: 20px;
+}
+
+@media (max-width: 650px) {
+  .add {
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }

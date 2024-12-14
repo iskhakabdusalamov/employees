@@ -9,7 +9,7 @@ const ListItemEmp = ({
   onToggleRise,
   deleteItem,
 }) => {
-  let classes = "list-group-item d-flex justify-content-between";
+  let classes = "list-group-item";
   if (increase) {
     classes += " increase";
   }
@@ -19,30 +19,18 @@ const ListItemEmp = ({
 
   return (
     <li className={classes}>
-      <span onClick={onToggleRise} className="list-group-item-label">
+      <span onClick={onToggleRise} className="name">
         {name}
       </span>
-      <input
-        className="list-group-item-input"
-        defaultValue={salary + "$"}
-        type="text"
-      />
-      <div className="d-flex justify-content-center align-items-center">
-        <button
-          onClick={onToggleIncrease}
-          className="btn-cookie btn-sm "
-          type="button"
-        >
-          <i className="fas fa-cookie"></i>
+      <span className="salary">{salary + "$"}</span>
+      <div className="buttons">
+        <button className="cookie button" onClick={onToggleIncrease}>
+          <span className="fas fa-cookie"></span>
         </button>
-        <button
-          onClick={deleteItem}
-          className="btn-trash btn-sm "
-          type="button"
-        >
-          <i className="fas fa-trash"></i>
+        <button className="trash button" onClick={deleteItem}>
+          <span className="fas fa-trash"></span>
         </button>
-        <i className="fas fa-star"></i>
+        <span className="fas fa-star"></span>
       </div>
     </li>
   );

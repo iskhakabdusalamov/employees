@@ -16,16 +16,16 @@ const AddEmp = ({ addItem }) => {
   return (
     <div className="add">
       <h3>Добавьте нового сотрудника</h3>
-      <form className="addForm d-flex" onSubmit={onSubmit}>
+      <form className="form" onSubmit={onSubmit}>
         <input
-          className="form-control new-post-label addInput"
+          className="form-control new-post-label input"
           onChange={(e) => setName(e.target.value)}
           value={name}
           placeholder="Как его зовут?"
           type="text"
         />
         <input
-          className="form-control new-post-label addInput"
+          className="form-control new-post-label input"
           onChange={(e) => setSalary(e.target.value)}
           value={salary}
           placeholder="З/П в $?"

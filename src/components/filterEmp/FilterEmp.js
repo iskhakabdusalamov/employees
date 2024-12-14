@@ -15,15 +15,16 @@ const FilterEmp = ({ filter, setFilter }) => {
       label: "З/П больше 1000$",
     },
   ];
+
   return (
     <div className="btn-group">
       {buttonsData.map(({ name, label }) => (
         <button
           key={name}
-          onClick={() => setFilter(name)}
           className={`btn ${
             filter === name ? "btn-light" : "btn-outline-light"
           }`}
+          onClick={() => setFilter(name)}
           type="button"
         >
           {label}

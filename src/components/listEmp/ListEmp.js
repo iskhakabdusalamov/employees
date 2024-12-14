@@ -1,6 +1,5 @@
-import ListItemEmp from "../listItemEmp/ListItemEmp";
-
 import "./listEmp.css";
+import ListItemEmp from "../listItemEmp/ListItemEmp";
 
 const ListEmp = ({ data, onToggleIncrease, onToggleRise, deleteItem }) => {
   return (
