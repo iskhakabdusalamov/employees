@@ -1,6 +1,6 @@
-import "../ListItem/ListItem.css";
+import "../listItemEmp/listItemEmp.css";
 
-const ListItem = ({
+const ListItemEmp = ({
   name,
   salary,
   increase,
@@ -48,4 +48,4 @@ const ListItem = ({
   );
 };
 
-export default ListItem;
+export default ListItemEmp;

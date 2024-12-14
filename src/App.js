@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "./components/Header/Header";
-import Search from "./components/Search/Search";
-import Filter from "./components/Filter/Filter";
-import List from "./components/List/List";
-import Add from "./components/Add/Add";
+import Header from "./components/header/Header";
+import SearchEmp from "./components/searchEmp/SearchEmp";
+import FilterEmp from "./components/filterEmp/FilterEmp";
+import ListEmp from "./components/listEmp/ListEmp";
+import AddEmp from "./components/addEmp/AddEmp";
 
 const App = () => {
   const [searchValue, setSearchValue] = React.useState("");
@@ -16,9 +16,7 @@ const App = () => {
   const [maxId, setMaxId] = React.useState(3);
 
   const searchEmp = (data, searchValue) => {
-    if (!searchValue) {
-      return data;
-    }
+    if (!searchValue) return data;
     return data.filter((item) =>
       item.name.toLowerCase().includes(searchValue.toLowerCase())
     );
@@ -40,11 +38,8 @@ const App = () => {
   const onToggleIncrease = (id) => {
     setData((prev) =>
       prev.map((item) => {
-        if (item.id === id) {
-          return { ...item, increase: !item.increase };
-        } else {
-          return item;
-        }
+        if (item.id === id) return { ...item, increase: !item.increase };
+        return item;
       })
     );
   };
@@ -52,18 +47,13 @@ const App = () => {
   const onToggleRise = (id) => {
     setData((prev) =>
       prev.map((item) => {
-        if (item.id === id) {
-          return { ...item, rise: !item.rise };
-        } else {
-          return item;
-        }
+        if (item.id === id) return { ...item, rise: !item.rise };
+        return item;
       })
     );
   };
 
-  const deleteItem = (id) => {
-    setData(data.filter((item) => item.id !== id));
-  };
+  const deleteItem = (id) => setData(data.filter((item) => item.id !== id));
 
   const addItem = (name, salary) => {
     const newItem = {
@@ -80,17 +70,17 @@ const App = () => {
   return (
     <div style={{ maxWidth: "1000px", margin: "50px auto" }}>
       <Header data={data} />
-      <div className="searchAndFiltering">
-        <Search searchvalue={searchValue} setSearchValue={setSearchValue} />
-        <Filter filter={filter} setFilter={setFilter} />
+      <div className="search">
+        <SearchEmp searchvalue={searchValue} setSearchValue={setSearchValue} />
+        <FilterEmp filter={filter} setFilter={setFilter} />
       </div>
-      <List
+      <ListEmp
         data={filteredData}
         onToggleIncrease={onToggleIncrease}
         onToggleRise={onToggleRise}
         deleteItem={deleteItem}
       />
-      <Add addItem={addItem} />
+      <AddEmp addItem={addItem} />
     </div>
   );
 };

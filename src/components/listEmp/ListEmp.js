@@ -1,12 +1,12 @@
-import ListItem from "../ListItem/ListItem";
+import ListItemEmp from "../listItemEmp/ListItemEmp";
 
-import "../List/List.css";
+import "./listEmp.css";
 
-const List = ({ data, onToggleIncrease, onToggleRise, deleteItem }) => {
+const ListEmp = ({ data, onToggleIncrease, onToggleRise, deleteItem }) => {
   return (
-    <ul className="list list-group">
+    <ul className="listEmp list-group">
       {data.map((item) => (
-        <ListItem
+        <ListItemEmp
           key={item.id}
           {...item}
           onToggleIncrease={() => onToggleIncrease(item.id)}
@@ -18,4 +18,4 @@ const List = ({ data, onToggleIncrease, onToggleRise, deleteItem }) => {
   );
 };
 
-export default List;
+export default ListEmp;

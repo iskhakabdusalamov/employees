@@ -1,6 +1,6 @@
-import "../Filter/Filter.css";
+import "./filterEmp.css";
 
-const Filter = ({ filter, setFilter }) => {
+const FilterEmp = ({ filter, setFilter }) => {
   const buttonsData = [
     {
       name: "all",
@@ -33,4 +33,4 @@ const Filter = ({ filter, setFilter }) => {
   );
 };
 
-export default Filter;
+export default FilterEmp;
